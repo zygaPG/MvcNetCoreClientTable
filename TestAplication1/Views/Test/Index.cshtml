@@ -1,0 +1,103 @@
+﻿
+@using TestAplication1.Models;
+@using TestAplication1.Controllers
+
+<head>
+    <link href="~/Content/StylOne.css" rel="stylesheet"/> 
+    
+</head> 
+
+<body>
+
+    <div id="CSV">
+        <form method="post">
+            <input type="hidden" name="action" value="3" />
+
+            <input type="submit" value="Importuj klientów z CSV" id="SendImput" />
+        </form>
+    </div>
+
+
+    <div id="EditBox">
+        <form method="post">
+            <table>
+                <tr>
+                    <td id="idPole">       <input id="idEdit"     type="text" name="id" value="id" readonly/>               </td>
+                    <td class="editInput"> <input id="nameEdit"   type="text" name="name" value="imie" />             </td>
+                    <td class="editInput"> <input id="surnameEdit" type="text" name="surname" value="nazwisko" />        </td>
+                    <td class="editInput"> <input id="yearEdit"   type="number" name="birthYear" value="0000" />           </td>
+                    <td> <input type="hidden" name="action" value="2" />             </td>
+                    
+                    <td id="sendEdit"> <input type="submit" value="zapisz zmiany" />     </td>
+                    <td id="AnulujEdit"> <input id="EditBack" type="button" value="anuluj" />     </td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+
+    <div id="AddBox">
+
+        <input type="button" id="AddButton" value="Dodaj" />
+        <form method="post" id="AddRow">
+            @using (Html.BeginForm())
+            {
+                <input type="text"          name="name" value="imie" />
+                <input type="text"          name="surname" value="nazwisko" />
+                <input type="number"        name="birthYear" value="0000" />
+                <input type="hidden"        name="action" value="0" />
+                
+                <input type="submit"        value="send" id="SendImput" />
+
+            }
+        </form>
+    </div>
+
+    <div id="tabelaSlot">
+
+        <table class="tabelka">
+            <tr>
+                <td>Id</td>
+                <td class="BordersRows">Imie</td>
+                <td class="BordersRows">Nazwisko</td>
+                <td class="BordersRows">RokUrodzenia</td>
+
+            </tr>
+
+
+            @foreach (var item in ViewBag.klienci)
+            {
+                <tr id="@item.id">
+                    <td style="width: 9%;"                         >        @item.id</td>
+                    <td class="BordersRows"                        >        @item.name</td>
+                    <td class="BordersRows"                        >        @item.surname</td>
+                    <td class="BordersRows" style="width: 20%;"    >        @item.birthYear</td>
+                    <td style="width: 9%;" class="EditRow"         >
+                        <input type="button" value="E" class="EditButton" onclick="EditClick(@item.id, '@item.name', '@item.surname', @item.birthYear)" />
+                        
+
+                    </td>
+                    <td style="width: 9%;"                      id="Delete @item.id"       >
+                        <form method="post">
+                            <input type="hidden" name="id" value="@item.id" />
+                            <input type="hidden" name="action" value="1" />
+                            
+                            <input type="submit" value="x" class="EditButton" />
+                        </form>
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/ScriptOne.js"></script>  <!----------------- coś tu nie działa-->
+
+    
+</body>

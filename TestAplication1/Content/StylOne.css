@@ -1,0 +1,192 @@
+﻿    body {
+        background: #06030d;
+        color: white;
+    }
+
+    #tabelaSlot {
+        position: absolute;
+        top: 20%;
+        right: 30%;
+        width: 40%;
+        background: black;
+    }
+
+    #tabelaSlot table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+
+.BordersRows {
+    border: 1px solid darkcyan;
+    width: 25%;
+    padding-left: 2%;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+}
+
+
+#tabelaSlot form{
+
+    margin: 0px;
+}
+
+
+
+
+
+#tabelaSlot input {
+    position: relative;
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.EditRow {
+    border: 1px solid darkcyan;
+}
+
+.EditButton {
+    position: absolute;
+    background-color: black;
+    color: white;
+    height: 200%;
+    width: 200%;
+    border: 0px;
+}
+
+
+
+
+#AddBox {
+    position: absolute;
+    width: 40%;
+    top: 10%;
+    height: 4.5%;
+    right: 30%;
+    margin-bottom: 10%;
+}
+
+
+
+#AddBox input {
+            box-sizing: border-box;
+            height: 100%;
+            margin: 0px;
+            padding: 2px;
+            border-width: 1px;
+            text-align: center;
+
+            background-color: black;
+            color:white;
+}
+
+#SendImput {
+        
+}
+
+
+#AddRow
+{
+        opacity: 0;
+        transform: translateX(-200%);
+        z-index: 4;
+}
+
+
+
+
+#AddButton {
+        position:absolute;
+        border: 1px solid red;
+        width: 18%;
+}
+
+
+
+#EditBox {
+    position: sticky;
+    height: 8%;
+    width: 56%;
+    right: 22%;
+    left:   22%;
+    background-color: white;
+    top: 30%;
+    z-index: 5;
+    background-color: black;
+
+    transform: translateX(-200%);
+    opacity: 0;
+
+}
+
+#EditBox table {
+        height: 100%;
+        border-collapse: collapse;
+}
+
+#EditBox form{
+    margin:0px;
+    height:100%;
+    width: 100%;
+}
+
+#idPole {
+    width: 8%;
+}
+
+#sendEdit{
+    width: 8%;
+}
+#AnulujEdit {
+    width: 8%;
+}
+
+#EditBox input{
+    
+    width:100%;
+    background:black;
+    color: white;
+    border: none;
+    text-align:center;
+    box-sizing: border-box;
+    padding: 0px;
+    font-size: 14px;
+    
+}
+
+.editInput {
+    border: 1px solid red;
+    width: 25%;
+}
+
+
+
+#CSV {
+    position: absolute;
+    width: 10%;
+    height: 4.5%;
+    top: 3%;
+    left: 30%;
+}
+
+    #CSV input {
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0px;
+        padding: 2px;
+        border: 1px solid orange;
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+#MidlePositionHead{
+    position: absolute;
+    width: 40%;
+    left: 30%;
+}

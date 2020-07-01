@@ -1,0 +1,66 @@
+﻿
+@using System.Web.UI.WebControls
+
+
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+    <head>
+        <link href="~/Content/StylOne.css" rel="stylesheet" />
+
+
+    </head>
+
+    <body>
+        @if (ViewBag.klienciSCV == null)
+        {
+            <div id="MidlePositionHead">
+                <h2>Upload</h2>
+                <form asp-controller="UploadController" asp-acrion="SingleFile" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="save" value="false" />
+                    <input type="file" name="postedFile" />
+                    <button type="submit">Załaduj</button>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div id="AddBox">
+                <form method="post" asp-controller="UploadController" >
+                    <input type="hidden" name="save" value="true" />
+                    <input type="hidden" name="postedFile" value=""/>
+                    <input type="submit" id="AddButton" value="zapisz" />
+                </form>
+            </div>
+        }
+
+        @if (ViewBag.klienciSCV != null)
+        {
+            <div id="tabelaSlot">
+                <table class="tabelka">
+                    <tr>
+                        <td>Id</td>
+                        <td class="BordersRows">Imie</td>
+                        <td class="BordersRows">Nazwisko</td>
+                        <td class="BordersRows">RokUrodzenia</td>
+
+                    </tr>
+
+
+                    @foreach (TestAplication1.Models.Klient item in ViewBag.klienciSCV)
+                    {
+                    <tr>
+                        <td>        @item.id</td>
+                        <td>        @item.name</td>
+                        <td>        @item.surname</td>
+                        <td>        @item.birthYear</td>
+                    </tr>
+                    }
+                    
+            </div>
+        }
+
+
+        </body>
